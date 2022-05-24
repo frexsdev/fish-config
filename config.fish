@@ -11,7 +11,7 @@ set LS_COLORS 'rs=0:di=01;38;2;189;147;249:ln=01;38;2;139;233;253:mh=00:pi=48;2;
 
 export MICRO_TRUECOLOR=1
 
-fish_add_path -v ".cargo/bin/" ".ghcup/bin/" projects/bang/ ".nimble/bin/"
+fish_add_path -v ".cargo/bin/" ".ghcup/bin/" projects/bang/ ".nimble/bin/" "projects/java-language-server/dist/"
 
 #
 eval "$(zoxide init fish)"
@@ -22,3 +22,7 @@ nvm use 16 --silent
 
 colorscript random
 starship init fish | source
+
+source /home/hugo/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+set -gx PNPM_HOME "/home/hugo/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
